@@ -42,9 +42,9 @@ def scrape_brand(brand:Brand):
 
         print_info("Done.")
 
-
     return result
 
-visconti_products = scrape_brand(Brand.VISCONTI)
-df = pd.DataFrame(visconti_products)
-df.to_csv('visconti_products.csv', index=False)
+for b in Brand:
+    products = scrape_brand(b)
+    df = pd.DataFrame(products)
+    df.to_csv(f'{b.value}_products.csv', index=False)
