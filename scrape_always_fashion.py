@@ -9,7 +9,7 @@ import pandas as pd
 def scrape_brand(brand:Brand):
     result:list[dict] = []
     for page_index in range(30):
-        print_info(f"Scraping {brand.value}, page {page_index}...")
+        print_info(f"Scraping {brand.value}, page {page_index}... ", end='')
         af_repr = brand.af_repr
         if af_repr is None: raise Exception("af_repr cannot be None")
 
@@ -45,6 +45,6 @@ def scrape_brand(brand:Brand):
 
     return result
 
-gvfc_products = scrape_brand(Brand.GVFC)
-df = pd.DataFrame(gvfc_products)
-df.to_csv('gvfc_products.csv', index=False)
+visconti_products = scrape_brand(Brand.VISCONTI)
+df = pd.DataFrame(visconti_products)
+df.to_csv('visconti_products.csv', index=False)
