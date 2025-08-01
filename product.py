@@ -7,7 +7,10 @@ class Brand(enum.Enum):
     ESTERBROOK = "Esterbrook"
 
     @property
-    def af_repr(self):
+    def af_repr(self) -> str:
+        """
+        :return: The always_fashion representation of the brand. Used to construct the URL for requests.
+        """
         return {
             Brand.GVFC: "graf-von-faber-castell",
             Brand.VISCONTI: "visconti",
@@ -32,7 +35,8 @@ class Product:
     @classmethod
     def from_csv_line(cls, line:str):
         """
-        order should be: name, price, link, category, brand
+        :param line: A line of the CSV file. Must be seperated by a comma.
+        The order must precisely be per following: name, price, link, category, brand.
         """
         _split = line.replace("\n", "").split(',')
         assert len(_split) == 5, f"Length of csv line is not 5. \nProvided line: {line}"
@@ -51,7 +55,7 @@ class Product:
 
         return cls(name, int(price), link, c, b)
 
-    def __dict__(self):
+    def __dict__(self) -> dict[str, str]:
         return {
             "name": self.name,
             "price": self.price,
@@ -59,5 +63,4 @@ class Product:
             "category": self.category.value,
             "brand": self.brand.value
         }
-    def __str__(self):
-        return str(self.__dict__())
+    def __str__(self): return str(self.__dict__())
