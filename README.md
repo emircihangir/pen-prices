@@ -4,9 +4,9 @@ this project was to sharpen my web scraping and data analysis skills.
 
 This project currently scrapes the following websites:
 - https://www.alwaysfashion.com/tr/
+- https://www.viscontiturkey.com
 
 Other websites will be implemented in the future:
-- https://www.viscontiturkey.com
 - https://www.montblanc.com/en-tr
 - https://lamyshop.com.tr
 - https://www.markakalem.com
