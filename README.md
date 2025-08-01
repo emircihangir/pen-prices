@@ -7,6 +7,9 @@ This project currently scrapes the following websites:
 
 Other websites will be implemented in the future:
 - https://www.viscontiturkey.com
+- https://www.montblanc.com/en-tr
+- https://lamyshop.com.tr
+- https://www.markakalem.com
 
 Certain measures are taken to ensure the servers are not exhausted.
 All the data scraped in this project are publicly available, meaning 
